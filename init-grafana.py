@@ -3,8 +3,6 @@ import json
 import os
 import subprocess
 from dotenv import load_dotenv
-import secrets
-import string
 
 
 def main():
@@ -33,7 +31,7 @@ def main():
     add_datasource(session, prometheus_url, grafana_host, grafana_port)
     uid = get_prometheus_uid(session, grafana_host, grafana_port)
     prepare_app_json(uid)
-    add_dashboard(session, "./node-exporter.json", grafana_host, grafana_port)
+    # add_dashboard(session, "./node-exporter.json", grafana_host, grafana_port)
     add_dashboard(session, "./app.json", grafana_host, grafana_port)
 
     print('Congratulations! Grafana is running on http://{}:{}'.format(grafana_host, grafana_port))
@@ -52,7 +50,7 @@ def prepare_app_json(uid):
 def replace_json_values(json_obj, old_value, new_value):
     if isinstance(json_obj, dict):
         for key, value in json_obj.items():
-            if value == old_value:
+            if key == 'datasource':
                 json_obj[key] = new_value
             else:
                 replace_json_values(value, old_value, new_value)

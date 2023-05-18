@@ -1,0 +1,81 @@
+version: '3'
+services:
+  db:
+    container_name: db
+    image: postgres:latest
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+  app:
+    container_name: app
+    build: ./app
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: curl --fail localhost:8000 || exit 1
+      interval: 10s
+      retries: 3
+      timeout: 10s
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    restart: always
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana.ini:/etc/grafana/grafana.ini
+    links:
+      - prometheus
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    env_file:
+      - .env
+    healthcheck:
+      test: curl --fail localhost:3000 || exit 1
+      interval: 10s
+      retries: 3
+      timeout: 10s
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    restart: always
+    links:
+      - app
+    ports:
+      - "9090:9090"
+    depends_on:
+      - app
+    volumes:
+      - prom-data:/prometheus
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+
+volumes:
+  db-data:
+  pgadmin-data:
+  grafana-data:
+  prom-data:

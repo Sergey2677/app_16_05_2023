@@ -33,7 +33,7 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": "e53b9578-80a3-47ff-ad54-a0900867870b",
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -56,7 +56,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "b68c0759-cf5c-446e-a8ef-3fd24d70172e",
+      "datasource": "e53b9578-80a3-47ff-ad54-a0900867870b",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -162,7 +162,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "b68c0759-cf5c-446e-a8ef-3fd24d70172e",
+      "datasource": "e53b9578-80a3-47ff-ad54-a0900867870b",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -271,7 +271,7 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "b68c0759-cf5c-446e-a8ef-3fd24d70172e",
+      "datasource": "e53b9578-80a3-47ff-ad54-a0900867870b",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -378,7 +378,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "b68c0759-cf5c-446e-a8ef-3fd24d70172e",
+      "datasource": "e53b9578-80a3-47ff-ad54-a0900867870b",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -479,7 +479,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "b68c0759-cf5c-446e-a8ef-3fd24d70172e",
+      "datasource": "e53b9578-80a3-47ff-ad54-a0900867870b",
       "decimals": null,
       "fieldConfig": {
         "defaults": {
@@ -586,7 +586,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "b68c0759-cf5c-446e-a8ef-3fd24d70172e",
+      "datasource": "e53b9578-80a3-47ff-ad54-a0900867870b",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -692,7 +692,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "b68c0759-cf5c-446e-a8ef-3fd24d70172e",
+      "datasource": "e53b9578-80a3-47ff-ad54-a0900867870b",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -795,7 +795,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "b68c0759-cf5c-446e-a8ef-3fd24d70172e",
+      "datasource": "e53b9578-80a3-47ff-ad54-a0900867870b",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -902,7 +902,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "b68c0759-cf5c-446e-a8ef-3fd24d70172e",
+      "datasource": "e53b9578-80a3-47ff-ad54-a0900867870b",
       "fieldConfig": {
         "defaults": {
           "custom": {}

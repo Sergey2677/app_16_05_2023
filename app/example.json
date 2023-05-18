@@ -1,0 +1,20 @@
+{
+  "id": 92929,
+  "answer": "the Crimea",
+  "question": "This strategic peninsula became part of Ukraine in 1954",
+  "value": 1000,
+  "airdate": "2004-05-19T19:00:00.000Z",
+  "created_at": "2022-12-30T19:20:08.616Z",
+  "updated_at": "2022-12-30T19:20:08.616Z",
+  "category_id": 9694,
+  "game_id": 2637,
+  "invalid_count": null,
+  "category": {
+    "id": 9694,
+    "title": "ukraine on the brain",
+    "created_at": "2022-12-30T19:20:08.266Z",
+    "updated_at": "2022-12-30T19:20:08.266Z",
+    "clues_count": 5
+  }
+}
+

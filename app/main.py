@@ -1,4 +1,6 @@
-# import datetime
+from prometheus_fastapi_instrumentator import Instrumentator
+from fastapi.middleware.cors import CORSMiddleware
+
 from datetime import datetime
 
 from fastapi import FastAPI
@@ -29,3 +31,14 @@ async def get_question_from_quiz():
         'answer': 'the Crimea',
         'created_at': datetime.strptime('2022-12-30T19:20:08.616Z', "%Y-%m-%dT%H:%M:%S.%fZ")
     }
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+Instrumentator().instrument(app).expose(app)
