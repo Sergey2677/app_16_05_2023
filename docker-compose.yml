@@ -6,6 +6,8 @@ services:
     restart: always
     volumes:
       - db-data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
     env_file:
       - .env
     healthcheck:
@@ -29,10 +31,16 @@ services:
     container_name: app
     build: ./app
     restart: always
+    user: "1000:1000"
     depends_on:
       - db
+    volumes:
+      - ./app:/app
     ports:
       - "8000:8000"
+    command: bash -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+    env_file:
+      - .env
     healthcheck:
       test: curl --fail localhost:8000 || exit 1
       interval: 10s
